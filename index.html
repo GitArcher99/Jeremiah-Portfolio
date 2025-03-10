@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeremiah Archer | Cybersecurity Portfolio</title>
     <style>
+        /* General Styling */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: radial-gradient(circle, #0f2027, #203a43, #2c5364);
+            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
             color: #ffffff;
             overflow-x: hidden;
             position: relative;
@@ -21,22 +22,46 @@
             position: relative;
             z-index: 2;
         }
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 32, 39, 0.95);
+            padding: 15px 0;
+            text-align: center;
+            z-index: 100;
+            transition: background 0.3s;
+        }
+        nav a {
+            color: #00e5ff;
+            text-decoration: none;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            transition: color 0.3s, transform 0.2s;
+        }
+        nav a:hover {
+            color: #ffcc00;
+            transform: scale(1.1);
+        }
+        /* Header */
         header {
             background: rgba(31, 31, 31, 0.9);
             color: #fff;
-            padding: 30px 0;
+            padding: 40px 0;
             text-align: center;
-            font-size: 1.5em;
+            font-size: 1.8em;
             font-weight: bold;
             position: relative;
             z-index: 10;
         }
+        /* Sections */
         .section {
             padding: 20px;
             background: rgba(28, 28, 28, 0.85);
             margin: 20px 0;
             border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
             cursor: pointer;
             transition: background 0.3s ease, transform 0.2s ease;
             position: relative;
@@ -44,15 +69,18 @@
         }
         .section:hover {
             background: rgba(41, 41, 41, 0.95);
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
         .content {
             display: none;
             margin-top: 10px;
         }
+        /* Titles */
         h1, h2 {
             color: #00e5ff;
+            text-align: center;
         }
+        /* Lists */
         ul {
             list-style: none;
             padding: 0;
@@ -62,7 +90,12 @@
             margin: 5px 0;
             padding: 10px;
             border-radius: 5px;
+            transition: background 0.3s ease;
         }
+        ul li:hover {
+            background: rgba(50, 50, 50, 0.9);
+        }
+        /* Footer */
         footer {
             text-align: center;
             padding: 20px;
@@ -74,16 +107,7 @@
             color: #00e5ff;
             text-decoration: none;
         }
-        .animation-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            background: url('https://source.unsplash.com/1600x900/?technology,cybersecurity') no-repeat center center/cover;
-            opacity: 0.2;
-        }
+        /* Floating Animated Bubbles */
         .floating-bubbles {
             position: fixed;
             top: 0;
@@ -113,7 +137,16 @@
     </script>
 </head>
 <body>
-    <div class="animation-bg"></div>
+    <div class="floating-bubbles"></div>
+    
+    <nav>
+        <a href="#resume">📄 Resume</a>
+        <a href="#about">ℹ️ About</a>
+        <a href="#certifications">🎓 Certifications</a>
+        <a href="#skills">🛠️ Skills</a>
+        <a href="#experience">💼 Experience</a>
+        <a href="#contact">📩 Contact</a>
+    </nav>
     
     <header>
         <h1>🚀 Jeremiah Archer</h1>
@@ -121,26 +154,47 @@
     </header>
     
     <div class="container">
-        <div class="section" onclick="toggleSection(this)">
+        <div id="resume" class="section" onclick="toggleSection(this)">
             <h2>📄 Resume</h2>
             <div class="content">
                 <p><a href="https://drive.google.com/file/d/1YmllKQgP1CBVgyvv3qtF-SD3n4MeAxb-/view?usp=drive_link" target="_blank">📂 View My Resume</a></p>
             </div>
         </div>
-        
-        <div class="section" onclick="toggleSection(this)">
+
+        <div id="about" class="section" onclick="toggleSection(this)">
             <h2>ℹ️ About Me</h2>
             <div class="content">
-                <p>I'm Jeremiah Archer, a **cybersecurity professional** with expertise in **threat analysis, incident response, and security automation**.</p>
-                <p>Currently, I work as a **GSOC Analyst at Allied**, where I **monitor, investigate, and respond to security threats** in real time.</p>
-                <p>With experience at **Apple**, I also have a strong background in **IT support, troubleshooting, and technical customer service**.</p>
-                <p>I'm passionate about **cyber defense, automation, and ethical hacking**, continuously expanding my skills in **network security and cloud infrastructure**.</p>
+                <p>I'm Jeremiah Archer, a **cybersecurity professional** specializing in **threat analysis, incident response, and security automation**.</p>
+                <p>As a **GSOC Analyst at Allied**, I **monitor, investigate, and respond to cyber threats in real-time**.</p>
+                <p>Previously at **Apple**, I built expertise in **IT support, troubleshooting, and technical customer service**.</p>
+            </div>
+        </div>
+
+        <div id="certifications" class="section" onclick="toggleSection(this)">
+            <h2>🎓 Certifications</h2>
+            <div class="content">
+                <ul>
+                    <li>CompTIA Security+</li>
+                    <li>CompTIA Network+</li>
+                    <li>Certified in Cybersecurity (ISC²)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="skills" class="section" onclick="toggleSection(this)">
+            <h2>🛠️ Skills</h2>
+            <div class="content">
+                <ul>
+                    <li>🔐 Network Security</li>
+                    <li>📡 Threat Analysis</li>
+                    <li>🛠️ System Hardening</li>
+                </ul>
             </div>
         </div>
     </div>
     
     <footer>
-        <p>📩 Contact: jrarcher2017@gmail.com | <a href="https://github.com/GitArcher99">🐙 GitHub Profile</a> | <a href="https://www.linkedin.com/in/jeremiah-archer-202367232/">🔗 LinkedIn</a> | <a href="https://medium.com/@jrarcher2017">✍️ Medium</a></p>
+        <p>📩 Contact: jrarcher2017@gmail.com | <a href="https://github.com/GitArcher99">🐙 GitHub</a> | <a href="https://www.linkedin.com/in/jeremiah-archer-202367232/">🔗 LinkedIn</a></p>
     </footer>
 </body>
 </html>
