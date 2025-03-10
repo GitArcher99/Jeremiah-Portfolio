@@ -110,21 +110,6 @@
             var content = section.querySelector('.content');
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
-        document.addEventListener("DOMContentLoaded", function() {
-            let bubblesContainer = document.createElement("div");
-            bubblesContainer.className = "floating-bubbles";
-            document.body.appendChild(bubblesContainer);
-            for (let i = 0; i < 15; i++) {
-                let bubble = document.createElement("div");
-                bubble.className = "bubble";
-                let size = Math.random() * 30 + 10;
-                bubble.style.width = `${size}px`;
-                bubble.style.height = `${size}px`;
-                bubble.style.left = `${Math.random() * 100}vw`;
-                bubble.style.animationDuration = `${Math.random() * 5 + 5}s`;
-                bubblesContainer.appendChild(bubble);
-            }
-        });
     </script>
 </head>
 <body>
@@ -139,17 +124,17 @@
         <div class="section" onclick="toggleSection(this)">
             <h2>📄 Resume</h2>
             <div class="content">
-                <p><a href="/mnt/data/JRESUME2025.pdf" target="_blank">📂 View My Resume</a></p>
+                <p><a href="https://drive.google.com/file/d/1YmllKQgP1CBVgyvv3qtF-SD3n4MeAxb-/view?usp=drive_link" target="_blank">📂 View My Resume</a></p>
             </div>
         </div>
         
         <div class="section" onclick="toggleSection(this)">
             <h2>ℹ️ About Me</h2>
             <div class="content">
-                <p>I'm Jeremiah Archer, an innovative **cybersecurity professional** with extensive experience in **threat detection, incident response, and security monitoring**.</p>
-                <p>Currently working as a **GSOC Analyst at Allied**, I specialize in **real-time threat analysis, risk assessment, and security automation**.</p>
-                <p>With a background in **IT support at Apple**, I honed my expertise in troubleshooting, customer engagement, and device security.</p>
-                <p>Passionate about **cyber defense, ethical hacking, and cloud security**, I continue to explore cutting-edge technologies to **protect digital environments and prevent cyber threats**.</p>
+                <p>I'm Jeremiah Archer, a **cybersecurity professional** with expertise in **threat analysis, incident response, and security automation**.</p>
+                <p>Currently, I work as a **GSOC Analyst at Allied**, where I **monitor, investigate, and respond to security threats** in real time.</p>
+                <p>With experience at **Apple**, I also have a strong background in **IT support, troubleshooting, and technical customer service**.</p>
+                <p>I'm passionate about **cyber defense, automation, and ethical hacking**, continuously expanding my skills in **network security and cloud infrastructure**.</p>
             </div>
         </div>
     </div>
@@ -159,4 +144,5 @@
     </footer>
 </body>
 </html>
+
 
