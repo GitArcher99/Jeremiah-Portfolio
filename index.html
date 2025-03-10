@@ -9,16 +9,20 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
+            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
             color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
         }
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
+            position: relative;
+            z-index: 2;
         }
         header {
-            background: #1f1f1f;
+            background: rgba(31, 31, 31, 0.9);
             color: #fff;
             padding: 30px 0;
             text-align: center;
@@ -27,29 +31,30 @@
         }
         .section {
             padding: 20px;
-            background: #1c1c1c;
+            background: rgba(28, 28, 28, 0.85);
             margin: 20px 0;
             border-radius: 10px;
             box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
         .section:hover {
-            background: #292929;
+            background: rgba(41, 41, 41, 0.9);
+            transform: scale(1.02);
         }
         .content {
             display: none;
             margin-top: 10px;
         }
         h1, h2 {
-            color: #00adb5;
+            color: #00e5ff;
         }
         ul {
             list-style: none;
             padding: 0;
         }
         ul li {
-            background: #222;
+            background: rgba(34, 34, 34, 0.85);
             margin: 5px 0;
             padding: 10px;
             border-radius: 5px;
@@ -57,13 +62,23 @@
         footer {
             text-align: center;
             padding: 20px;
-            background: #1f1f1f;
+            background: rgba(31, 31, 31, 0.9);
             color: white;
             margin-top: 20px;
         }
         a {
-            color: #00adb5;
+            color: #00e5ff;
             text-decoration: none;
+        }
+        .animation-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: url('https://source.unsplash.com/1600x900/?technology,cyber') no-repeat center center/cover;
+            opacity: 0.3;
         }
     </style>
     <script>
@@ -74,6 +89,8 @@
     </script>
 </head>
 <body>
+    <div class="animation-bg"></div>
+    
     <header>
         <h1>🚀 Jeremiah Archer</h1>
         <p>🔐 Cybersecurity Professional | 🖥️ IT Specialist</p>
@@ -90,9 +107,10 @@
         <div class="section" onclick="toggleSection(this)">
             <h2>ℹ️ About Me</h2>
             <div class="content">
-                <p>I'm Jeremiah Archer, a cybersecurity professional with a strong background in IT support and security operations. Passionate about network security, threat analysis, and proactive defense strategies.</p>
-                <p>Currently pursuing a **Bachelor of Science in Cybersecurity** at **Southern New Hampshire University** while gaining hands-on experience in **GSOC monitoring**, **incident response**, and **cloud security**.</p>
-                <p>Dedicated to problem-solving and always looking to expand my knowledge in the field of **cybersecurity and IT infrastructure**.</p>
+                <p>I'm Jeremiah Archer, a dedicated cybersecurity professional with hands-on experience in **threat detection, incident response, and security operations**. My work as a **GSOC Analyst at Allied** has strengthened my ability to **monitor, analyze, and mitigate security threats in real-time**.</p>
+                <p>Previously, as a **Specialist at Apple**, I refined my technical troubleshooting and customer service skills, ensuring a seamless experience for clients using **iOS and macOS devices**.</p>
+                <p>I’m currently pursuing a **Bachelor of Science in Cybersecurity** at **Southern New Hampshire University**, enhancing my expertise in **network security, penetration testing, and risk management**.</p>
+                <p>Passionate about **cyber defense strategies, automation, and cloud security**, I continuously explore **emerging threats, security frameworks, and industry best practices**.</p>
             </div>
         </div>
         
@@ -106,24 +124,6 @@
                     <li>✅ Certified in Cybersecurity (ISC²)</li>
                     <li>✅ IBM and ISC² Cybersecurity Specialist</li>
                     <li>✅ IT and Cloud Fundamentals</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="section" onclick="toggleSection(this)">
-            <h2>💼 Experience</h2>
-            <div class="content">
-                <p><strong>🔍 GSOC Analyst | Allied (09/2024 - Present)</strong></p>
-                <ul>
-                    <li>👨‍💻 Monitor and analyze security threats using GSOC tools.</li>
-                    <li>⚡ Respond to incidents in real-time, ensuring swift mitigation.</li>
-                    <li>🛡️ Collaborate with teams to maintain a secure operational environment.</li>
-                </ul>
-                <p><strong>📱 Specialist | Apple (11/2021 - Present)</strong></p>
-                <ul>
-                    <li>🎯 Delivered exceptional customer support for iOS/macOS users.</li>
-                    <li>💡 Resolved complex technical issues and improved customer satisfaction.</li>
-                    <li>🤝 Strengthened client relationships with personalized solutions.</li>
                 </ul>
             </div>
         </div>
@@ -150,4 +150,5 @@
     </footer>
 </body>
 </html>
+
 
