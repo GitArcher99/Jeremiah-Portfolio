@@ -9,7 +9,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+            background: radial-gradient(circle, #0f2027, #203a43, #2c5364);
             color: #ffffff;
             overflow-x: hidden;
             position: relative;
@@ -28,19 +28,23 @@
             text-align: center;
             font-size: 1.5em;
             font-weight: bold;
+            position: relative;
+            z-index: 10;
         }
         .section {
             padding: 20px;
             background: rgba(28, 28, 28, 0.85);
             margin: 20px 0;
             border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
             cursor: pointer;
             transition: background 0.3s ease, transform 0.2s ease;
+            position: relative;
+            z-index: 2;
         }
         .section:hover {
-            background: rgba(41, 41, 41, 0.9);
-            transform: scale(1.02);
+            background: rgba(41, 41, 41, 0.95);
+            transform: scale(1.03);
         }
         .content {
             display: none;
@@ -77,8 +81,28 @@
             width: 100%;
             height: 100%;
             z-index: 1;
-            background: url('https://source.unsplash.com/1600x900/?technology,cyber') no-repeat center center/cover;
-            opacity: 0.3;
+            background: url('https://source.unsplash.com/1600x900/?technology,cybersecurity') no-repeat center center/cover;
+            opacity: 0.2;
+        }
+        .floating-bubbles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .bubble {
+            position: absolute;
+            background: rgba(0, 229, 255, 0.5);
+            border-radius: 50%;
+            animation: float 10s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
         }
     </style>
     <script>
@@ -86,6 +110,21 @@
             var content = section.querySelector('.content');
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
+        document.addEventListener("DOMContentLoaded", function() {
+            let bubblesContainer = document.createElement("div");
+            bubblesContainer.className = "floating-bubbles";
+            document.body.appendChild(bubblesContainer);
+            for (let i = 0; i < 15; i++) {
+                let bubble = document.createElement("div");
+                bubble.className = "bubble";
+                let size = Math.random() * 30 + 10;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${Math.random() * 100}vw`;
+                bubble.style.animationDuration = `${Math.random() * 5 + 5}s`;
+                bubblesContainer.appendChild(bubble);
+            }
+        });
     </script>
 </head>
 <body>
@@ -107,40 +146,10 @@
         <div class="section" onclick="toggleSection(this)">
             <h2>ℹ️ About Me</h2>
             <div class="content">
-                <p>I'm Jeremiah Archer, a dedicated cybersecurity professional with hands-on experience in **threat detection, incident response, and security operations**. My work as a **GSOC Analyst at Allied** has strengthened my ability to **monitor, analyze, and mitigate security threats in real-time**.</p>
-                <p>Previously, as a **Specialist at Apple**, I refined my technical troubleshooting and customer service skills, ensuring a seamless experience for clients using **iOS and macOS devices**.</p>
-                <p>I’m currently pursuing a **Bachelor of Science in Cybersecurity** at **Southern New Hampshire University**, enhancing my expertise in **network security, penetration testing, and risk management**.</p>
-                <p>Passionate about **cyber defense strategies, automation, and cloud security**, I continuously explore **emerging threats, security frameworks, and industry best practices**.</p>
-            </div>
-        </div>
-        
-        <div class="section" onclick="toggleSection(this)">
-            <h2>📜 Certifications</h2>
-            <div class="content">
-                <ul>
-                    <li>✅ CompTIA Security+</li>
-                    <li>✅ CompTIA Network+</li>
-                    <li>✅ IBM IT Support</li>
-                    <li>✅ Certified in Cybersecurity (ISC²)</li>
-                    <li>✅ IBM and ISC² Cybersecurity Specialist</li>
-                    <li>✅ IT and Cloud Fundamentals</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="section" onclick="toggleSection(this)">
-            <h2>🎓 Education</h2>
-            <div class="content">
-                <p><strong>Bachelor of Science in Cybersecurity</strong> | Southern New Hampshire University (Expected 2026)</p>
-            </div>
-        </div>
-        
-        <div class="section" onclick="toggleSection(this)">
-            <h2>📞 Contact</h2>
-            <div class="content">
-                <p>📧 Email: jrarcher2017@gmail.com</p>
-                <p>📱 Phone: 781-692-0551</p>
-                <p>📍 Location: Boston, Massachusetts</p>
+                <p>I'm Jeremiah Archer, an innovative **cybersecurity professional** with extensive experience in **threat detection, incident response, and security monitoring**.</p>
+                <p>Currently working as a **GSOC Analyst at Allied**, I specialize in **real-time threat analysis, risk assessment, and security automation**.</p>
+                <p>With a background in **IT support at Apple**, I honed my expertise in troubleshooting, customer engagement, and device security.</p>
+                <p>Passionate about **cyber defense, ethical hacking, and cloud security**, I continue to explore cutting-edge technologies to **protect digital environments and prevent cyber threats**.</p>
             </div>
         </div>
     </div>
@@ -150,5 +159,4 @@
     </footer>
 </body>
 </html>
-
 
