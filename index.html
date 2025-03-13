@@ -72,32 +72,12 @@
             background: rgba(31, 31, 31, 0.9);
             margin-top: 20px;
         }
-        .hidden {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s, transform 0.8s;
-        }
-        .show {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
     <script>
         function toggleSection(section) {
             var content = section.querySelector('.content');
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
-        document.addEventListener("DOMContentLoaded", function() {
-            const sections = document.querySelectorAll(".hidden");
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("show");
-                    }
-                });
-            });
-            sections.forEach(section => observer.observe(section));
-        });
     </script>
 </head>
 <body>
@@ -109,6 +89,8 @@
         <a href="#experience">💼 Experience</a>
         <a href="#projects">🚀 Projects</a>
         <a href="#contact">📩 Contact</a>
+        <a href="https://www.linkedin.com/in/jeremiaharcher99" target="_blank">🔗 LinkedIn</a>
+        <a href="https://medium.com/@GitArcher99" target="_blank">📝 Medium</a>
     </nav>
     
     <header>
@@ -140,5 +122,4 @@
     </footer>
 </body>
 </html>
-
 
